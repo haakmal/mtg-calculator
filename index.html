@@ -2,8 +2,8 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>CodePen - Damage Counter</title>
-  <link rel="stylesheet" href="./style.css">
+  <title>Magic the Gathering Damage Calculator</title>
+<meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="./style.css">
 
 </head>
 <body>
@@ -20,20 +20,30 @@
       <div class="boxes">
         <input type="number" class="input" id="p1-strength" value="0">
         <label>/</label>
-        <input type="number"class="input" id="p1-toughness" value="0"></input>
+        <input type="number"class="input" id="p1-toughness" value="0">
       </div>
+    <div class="attributes">
       <span class="strike">
-        <input class="check" type="checkbox" id="p1-fstrike" disabled>
+        <input class="check" type="checkbox" id="p1-fstrike">
         <label>First Strike</label>
       </span>
       <span class="strike">
-        <input class="check" type="checkbox" id="p1-dstrike" disabled>
+        <input class="check" type="checkbox" id="p1-dstrike">
         <label>Double Strike</label>
       </span>
       <span class="strike">
-        <input class="check" type="checkbox" id="p1-noblock" disabled>
+        <input class="check" type="checkbox" id="p1-deathtouch">
+        <label>Deathtouch</label>
+      </span>
+      <span class="strike">
+        <input class="check" type="checkbox" id="p1-lifelink">
+        <label>Lifelink</label>
+      </span>
+      <span class="strike">
+        <input class="check" type="checkbox" id="p1-noblock">
         <label>Cannot Block</label>
       </span>
+    </div>
     </div>
 
     <span class="player">Result</span>
@@ -47,22 +57,32 @@
     <span class="player">Blocker (Strength/Toughness)</span><br>
     <div class="calc2">
       <div class="boxes">
-        <input type="number" class="input" id="p2-strength" value="0"></input>
+        <input type="number" class="input" id="p2-strength" value="0">
         <label>/</label>
-        <input type="number"class="input" id="p2-toughness" value="0"></input>
+        <input type="number"class="input" id="p2-toughness" value="0">
       </div>
+    <div class="attributes">
       <span class="strike">
-        <input class="check" type="checkbox" id="p2-fstrike" disabled>
+        <input class="check" type="checkbox" id="p2-fstrike">
         <label>First Strike</label>
       </span>
       <span class="strike">
-        <input class="check" type="checkbox" id="p2-dstrike" disabled>
+        <input class="check" type="checkbox" id="p2-dstrike">
         <label>Double Strike</label>
       </span>
       <span class="strike">
-        <input class="check" type="checkbox" id="p2-noblock" disabled >
+        <input class="check" type="checkbox" id="p2-deathtouch">
+        <label>Deathtouch</label>
+      </span>
+      <span class="strike">
+        <input class="check" type="checkbox" id="p2-lifelink">
+        <label>Lifelink</label>
+      </span>
+      <span class="strike">
+        <input class="check" type="checkbox" id="p2-noblock">
         <label>Cannot Block</label>
       </span>
+    </div>
     </div>
 
     <span class="player">Result</span>
@@ -73,6 +93,13 @@
   </div>
 
 </div>
+
+<p>
+  <ul>
+    <li><a href="https://www.github.com/haideraliakmal/mtg-calculator">Repo</a></li>
+    <li><a href="https://haiderali.co/">DrDaft</a></li>
+  </ul>
+</p>
 <!-- partial -->
   <script  src="./script.js"></script>
 
