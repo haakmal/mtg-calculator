@@ -13,7 +13,7 @@ Go to the [live page](https://haideraliakmal.github.io/mtg-calculator) and enter
 Not much at the moment but I'm planning things ahead for practice.
 
 - [x] Calculate damage
-- [-] Apply First Strike (one way at the moment)
+- [ ] Apply First Strike *(one way at the moment)*
 - [ ] Apply Double Strike
 - [ ] Apply Deathtouch
 - [ ] Apply Lifelink
