@@ -1,11 +1,11 @@
 
 function Calculate() {
   
-    var msg1 = document.querySelector(".msg1")
-    var msg2 = document.querySelector(".msg2")
+  var msg1 = document.querySelector(".msg1")
+  var msg2 = document.querySelector(".msg2")
     
-    msg1.classList.remove("lose", "win");
-    msg2.classList.remove("lose", "win");
+  msg1.classList.remove("lose", "win");
+  msg2.classList.remove("lose", "win");
   
   var attackArr = [
     Number(document.getElementById('p1-strength').value),
