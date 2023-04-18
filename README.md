@@ -16,7 +16,7 @@ Not much at the moment but I'm planning things ahead for practice.
 - [x] Apply First Strike
 - [x] Apply Double Strike
 - [x] Apply Deathtouch
-- [x] Apply Lifelink
+- [x] Apply Lifelink *(buggy)*
 - [ ] Show some flavour text
 - [ ] Explain calculation
 - [ ] Calculate any counters
