@@ -13,11 +13,12 @@ Go to the [live page](https://haideraliakmal.github.io/mtg-calculator) and enter
 Not much at the moment but I'm planning things ahead for practice.
 
 - [x] Calculate damage
-- [ ] Apply First Strike *(one way at the moment)*
-- [ ] Apply Double Strike
-- [ ] Apply Deathtouch
-- [ ] Apply Lifelink
+- [x] Apply First Strike
+- [x] Apply Double Strike
+- [x] Apply Deathtouch
+- [x] Apply Lifelink
 - [ ] Show some flavour text
+- [ ] Explain calculation
 - [ ] Calculate any counters
 
 **PS.** I'm still working on this and my coding skills aren't the best so if anyone wants to fork this and improve it feel free!
