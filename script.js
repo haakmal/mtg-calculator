@@ -53,7 +53,7 @@ function Calculate() {
   Cleanup();
   Assign();
   Check(); // Update message
-  Explain();
+  //Explain();
 
   // Update stats
   function Update() {}
@@ -85,8 +85,8 @@ function Calculate() {
 
   // Calculate Battle
   function Fight() {
-    // Check for Lifelink
-    LifeLink();
+    //NoBlock(); // Check for cannot block 
+    LifeLink(); // Check for Lifelink
     // Pre fight
     FirstStrike();
     DoubleStrike();
@@ -121,10 +121,16 @@ function Calculate() {
   
   // Return Lifelink
   function LifeLink() {
-    var damange
+    // Hide if visible
+    document.querySelector(".lifelink1").classList.add("hidden");
+    document.querySelector(".lifelink2").classList.add("hidden");
+    
+    var damage
     if (attackArr[5] === true) {
-      if (attackSTR > blockBLK) {
-        damage = attackSTR - blockBLK
+      if (blockBLK === 0) {
+        damage = 0
+      } else if (attackSTR > blockBLK) {
+        damage = blockBLK
       } else {
         damage = attackSTR
       }
@@ -132,23 +138,39 @@ function Calculate() {
       document.querySelector(".lifelink1").classList.remove("hidden");
     }
     if (blockArr[5] === true) {
-      if (blockSTR > attackBLK) {
-        damage = blockSTR - attackBLK
+      if (attackBLK === 0) {
+        damage = 0
+      } else if (blockSTR > attackBLK) {
+        damage = attackBLK
       } else {
         damage = blockSTR
       }
-      document.getElementById("p2-lifelink-text").innerHTML = "+" +
+      document.getElementById("p2-lifelink-text").innerHTML = "+" + damage;
       document.querySelector(".lifelink2").classList.remove("hidden"); damage
     }
   }
   
   // Make Indestructible
   function Indestructible() {
+    var damage
     if (attackArr[7] === true) {
+      damage = attackSTR
+      document.getElementById("p1-indestruct-text").innerHTML = "+" + damage;
+      document.querySelector(".indestruct2").classList.remove("hidden"); damage
       attackBLK = attackArr[1];
     }
     if (blockArr[7] === true) {
       blockBLK = blockArr[1];
+    }
+  }
+  
+  // Cannot Block
+  function NoBlock() {
+    if (attackArr[6] === true) {
+      attackBLK = 0;
+    }
+    if (blockArr[6] === true) {
+      blockBLK = 0;
     }
   }
 
@@ -182,9 +204,11 @@ function Calculate() {
     if (attackBLK < 0) {
       attackBLK = 0;
     }
-    if (blockBLK < 0) {
+    else if (blockBLK < 0) {
       blockBLK = 0;
     }
+    else if (attackArr[7] === true) {}
+    else if (blockArr[7] === true) {}
   }
 
   //----------- DETAILS PANE
@@ -202,11 +226,14 @@ function Calculate() {
     let ul = document.getElementById("explain");
     
     const text = [
-      "<li>" + attacker + " hits " + attackArr[0] + "/" + attackArr[1] + "</li>",
-      "<li>" + blocker + " has " + blockArr[0] + "/" + blockArr[1] + "</li>",
-      
-    ]
+      "<li>" + attacker + " hits with " + attackArr[0] + "/" + attackArr[1] + " and " + blocker + " defends with " + blockArr[0] + "/" + blockArr[1] + "</li>"
+    ];
     
-    ul.insertAdjacentHTML("beforeend", "<li>hello</li>");
+    ul.innerHTML = "";
+    ul.insertAdjacentHTML("beforeend", text[0]);
+    
+    if (attackArr[2] === true) {
+      
+    }
   }
 }

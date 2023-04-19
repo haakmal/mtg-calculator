@@ -14,11 +14,12 @@ Not much at the moment but I'm planning things ahead for practice.
 
 - [x] Calculate damage
 - [x] Apply First Strike
-- [x] Apply Double Strike
+- [x] Apply Double Strike *feels buggy*
 - [x] Apply Deathtouch
-- [x] Apply Lifelink *(buggy)*
-- [ ] Show some flavour text
-- [ ] Explain calculation
-- [ ] Calculate any counters
+- [x] Apply Lifelink
+- [x] Apply Indestructible *feels buggy*
+- [ ] Explain calculation[1]
+- [ ] Calculate any counters[2]
 
-**PS.** I'm still working on this and my coding skills aren't the best so if anyone wants to fork this and improve it feel free!
+[1]: Been trying to implement this but it may just be too much for me right now
+[2]: It kind of is doing it already with negative values but not sure if this is the best way, a separate counter at the bottom might work better.
