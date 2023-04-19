@@ -10,7 +10,7 @@ Go to the [live page](https://haideraliakmal.github.io/mtg-calculator) and enter
 
 ## What can this calculator do
 
-Not much at the moment but I'm planning things ahead for practice.
+~~Not much at the moment but I'm planning things ahead for practice.~~ Almost everything I had planned with a few things left :bowtie:
 
 - [x] Calculate damage
 - [x] Apply First Strike
