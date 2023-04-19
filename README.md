@@ -14,12 +14,13 @@ Not much at the moment but I'm planning things ahead for practice.
 
 - [x] Calculate damage
 - [x] Apply First Strike
-- [x] Apply Double Strike *feels buggy*
+- [x] Apply Double Strike[^3]
 - [x] Apply Deathtouch
 - [x] Apply Lifelink
-- [x] Apply Indestructible *feels buggy*
+- [x] Apply Indestructible[^3]
 - [ ] Explain calculation[^1]
 - [ ] Calculate any counters[^2]
 
 [^1]: Been trying to implement this but it may just be too much for me right now
 [^2]: It kind of is doing it already with negative values but not sure if this is the best way, a separate counter at the bottom might work better.
+[^3]: Feels buggy
