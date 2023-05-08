@@ -378,7 +378,7 @@ span.lifelink:before {
 span.lifelink-on {
   background-color: #3db377 !important;
   color: rgb(200, 255, 100) !important;
-  grid-area: 2 / 4 / 3 / 5;
+  margin: 0 0.5rem 0 0;
 }
 
 p {
