@@ -3,10 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <title>Magic the Gathering Damage Calculator</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="A Magic the Gathering Damage Calculator designed for learning the game while you play.">
-  <meta name=”robots” content="index, follow">
-  <link rel="stylesheet" href="./style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">  
+<meta name="description" content="A Magic the Gathering Damage Calculator designed for learning the game while you play.">
+<meta name=”robots” content="index, follow">
+<link rel="stylesheet" href="./style.css">
+
 </head>
 <body>
 <!-- partial:index.partial.html -->
@@ -14,107 +16,147 @@
 
 <details>
   <summary>How to use this tool</summary>
-  <p>To calculate damage during combat use the two cards below to setup your <code>Attacker</code> and <code>Blocker</code>. A card's <code>Strength</code> value goes in the left box and <code>Toughness</code> value in the right. Select any abilities that are in play such as <code>First Strike</code>, <code>Deathtouch</code>, etc, and when you're ready click the <code>Battle</code> button!</p>
-  <p>The cards will show both who won the battle as well as the results for keeping track on your own counters if any. <code>Lifelink</code> if returned will be in a green box.</p>
+  <p>To calculate damage during combat use the two cards below to setup your <code>Attacker</code> and <code>Blocker</code>. A card's <code>Power</code> value goes in the left box and <code>Toughness</code> value in the right. Select any abilities that are in play such as <code>First Strike</code>, <code>Deathtouch</code>, etc, and when you're ready click the <code>Battle</code> button!</p>
+  <p>The <code>Result</code> section will show who won the battle. <code>Lifelink</code> if returned will be in a green <span class="fa-solid fa-heart"></span> box. The other boxes will light up according to how the card was set.</p>
 </details>
 
-<button role="button" id="fight-button" onclick="Calculate()">Battle</button>
+<button role="button" id="fight-button" onclick="Attack()">Battle</button>
 
 <div class="cards">
-  
-<div class="card">
-    <span class="player">Attacker (Strength/Toughness)</span><br>
+
+  <div class="card" id="p1-card">
+    <span class="player">Attacker (Power/Toughness)</span><br>
     <div class="calc1">
       <div class="boxes">
         <input type="number" class="input" id="p1-strength" value="0">
         <label>/</label>
-        <input type="number"class="input" id="p1-toughness" value="0">
+        <input type="number" class="input" id="p1-toughness" value="0">
       </div>
-    <div class="attributes">
-      <span class="strike">
-        <input class="check" type="checkbox" id="p1-fstrike">
-        <label>First Strike</label>
-      </span>
-      <span class="strike">
-        <input class="check" type="checkbox" id="p1-dstrike">
-        <label>Double Strike</label>
-      </span>
-      <span class="strike">
-        <input class="check" type="checkbox" id="p1-deathtouch">
-        <label>Deathtouch</label>
-      </span>
-      <span class="strike">
-        <input class="check" type="checkbox" id="p1-lifelink">
-        <label>Lifelink</label>
-      </span>
-      <span class="strike">
-        <input class="check" type="checkbox" id="p1-noblock" disabled>
-        <label>Cannot Block</label>
-      </span>
-      <span class="strike">
-        <input class="check" type="checkbox" id="p1-indestruct">
-        <label>Indestructible</label>
-      </span>
-    </div>
+      <div class="attributes">
+        <span class="strike">
+          <input class="check" type="checkbox" id="p1-fstrike">
+          <label>First Strike</label>
+        </span>
+        <span class="strike">
+          <input class="check" type="checkbox" id="p1-dstrike">
+          <label>Double Strike</label>
+        </span>
+        <span class="strike">
+          <input class="check" type="checkbox" id="p1-deathtouch">
+          <label>Deathtouch</label>
+        </span>
+        <span class="strike">
+          <input class="check" type="checkbox" id="p1-lifelink">
+          <label>Lifelink</label>
+        </span>
+        <span class="strike">
+          <input class="check" type="checkbox" id="p1-noblock">
+          <label>Cannot Block</label>
+        </span>
+        <span class="strike">
+          <input class="check" type="checkbox" id="p1-indestruct">
+          <label>Indestructible</label>
+        </span>
+        <span class="strike">
+          <input class="check" type="checkbox" id="p1-flying">
+          <label>Flying</label>
+        </span>
+        <span class="strike">
+          <input class="check" type="checkbox" id="p1-reach">
+          <label>Reach</label>
+        </span>
+        <span class="strike">
+          <input class="check" type="checkbox" id="p1-trample">
+          <label>Trample</label>
+        </span>
+        <span class="strike">
+          <input class="check" type="checkbox" id="p1-planeswalker">
+          <label class="planeswalker">Planeswalker</label>
+        </span>
+      </div>
     </div>
 
     <span class="player">Result</span>
     <div class="result">
-      <span class="result" id="p1-result">0/0</span>
-      <span class="lifelink lifelink1 hidden" id="p1-lifelink-text"></span>
-      <span class="indestruct indestruct1 hidden" id="p1-indestruct-text"></span>
-      <span class="msg msg1" id="p1-msg"></span>
+      <span class="msg" id="p1-msg"></span>
+      <span class="firststrike" id="p1-fstrike-text"></span>
+      <span class="doublestrike" id="p1-dstrike-text"></span>
+      <span class="deathtouch" id="p1-death-text"></span>
+      <span class="lifelink" id="p1-lifelink-text"></span>
+      <span class="trample" id="p1-trample-text"></span>
+      <span class="flying" id="p1-flying-text"></span>
+      <span class="reach" id="p1-reach-text"></span>
+      <span class="planeswalker" id="p1-plane-text"></span>
     </div>
   </div>
 
-<div class="card">
-    <span class="player">Blocker (Strength/Toughness)</span><br>
+  <div class="card" id="p2-card">
+    <span class="player">Blocker (Power/Toughness)</span><br>
     <div class="calc2">
       <div class="boxes">
         <input type="number" class="input" id="p2-strength" value="0">
         <label>/</label>
-        <input type="number"class="input" id="p2-toughness" value="0">
+        <input type="number" class="input" id="p2-toughness" value="0">
       </div>
-    <div class="attributes">
-      <span class="strike">
-        <input class="check" type="checkbox" id="p2-fstrike">
-        <label>First Strike</label>
-      </span>
-      <span class="strike">
-        <input class="check" type="checkbox" id="p2-dstrike">
-        <label>Double Strike</label>
-      </span>
-      <span class="strike">
-        <input class="check" type="checkbox" id="p2-deathtouch">
-        <label>Deathtouch</label>
-      </span>
-      <span class="strike">
-        <input class="check" type="checkbox" id="p2-lifelink">
-        <label>Lifelink</label>
-      </span>
-      <span class="strike">
-        <input class="check" type="checkbox" id="p2-noblock" disabled>
-        <label>Cannot Block</label>
-      </span>
-      <span class="strike">
-        <input class="check" type="checkbox" id="p2-indestruct">
-        <label>Indestructible</label>
-      </span>
-    </div>
+      <div class="attributes">
+        <span class="strike">
+          <input class="check" type="checkbox" id="p2-fstrike">
+          <label>First Strike</label>
+        </span>
+        <span class="strike">
+          <input class="check" type="checkbox" id="p2-dstrike">
+          <label>Double Strike</label>
+        </span>
+        <span class="strike">
+          <input class="check" type="checkbox" id="p2-deathtouch">
+          <label>Deathtouch</label>
+        </span>
+        <span class="strike">
+          <input class="check" type="checkbox" id="p2-lifelink">
+          <label>Lifelink</label>
+        </span>
+        <span class="strike">
+          <input class="check" type="checkbox" id="p2-noblock">
+          <label>Cannot Block</label>
+        </span>
+        <span class="strike">
+          <input class="check" type="checkbox" id="p2-indestruct">
+          <label>Indestructible</label>
+        </span>
+        <span class="strike">
+          <input class="check" type="checkbox" id="p2-flying">
+          <label>Flying</label>
+        </span>
+        <span class="strike">
+          <input class="check" type="checkbox" id="p2-reach">
+          <label>Reach</label>
+        </span>
+        <span class="strike">
+          <input class="check" type="checkbox" id="p2-trample">
+          <label>Trample</label>
+        </span>
+        <span class="strike">
+          <input class="check" type="checkbox" id="p2-planeswalker">
+          <label class="planeswalker">Planeswalker</label>
+        </span>
+      </div>
     </div>
 
     <span class="player">Result</span>
     <div class="result">
-      <span class="result" id="p2-result">0/0</span>
-      <span class="lifelink lifelink2 hidden" id="p2-lifelink-text"></span>
-      <span class="indestruct indestruct2 hidden" id="p2-indestruct-text"></span>
-      <span class="msg msg2" id="p2-msg"></span>
+      <span class="msg" id="p2-msg"></span>
+      <span class="firststrike" id="p2-fstrike-text"></span>
+      <span class="doublestrike" id="p2-dstrike-text"></span>
+      <span class="deathtouch" id="p2-death-text"></span>
+      <span class="lifelink" id="p2-lifelink-text"></span>
+      <span class="trample" id="p2-trample-text"></span>
+      <span class="flying" id="p2-flying-text"></span>
+      <span class="reach" id="p2-reach-text"></span>
+      <span class="planeswalker" id="p2-plane-text"></span>
     </div>
   </div>
 
 </div>
-
-
 
 <details class="hidden" id="explain-box">
   <summary>Calculation Explained</summary>
@@ -123,14 +165,14 @@
 </details>
 
 <p>
-  <ul>
-    <li><a href="http://kemstudios.blogspot.com">Artwork</a></li>
-    <li><a href="https://www.github.com/haideraliakmal/mtg-calculator">Repo</a></li>
-    <li><a href="https://haiderali.co/">DrDaft</a></li>
-  </ul>
+<ul>
+  <li><a href="http://kemstudios.blogspot.com">Artwork</a></li>
+  <li><a href="https://www.github.com/haideraliakmal/mtg-calculator">Repo</a></li>
+  <li><a href="https://haiderali.co/">DrDaft</a></li>
+</ul>
 </p>
 <!-- partial -->
-  <script  src="./script.js"></script>
+  <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="./script.js"></script>
 
 </body>
 </html>

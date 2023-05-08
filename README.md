@@ -13,14 +13,21 @@ Go to the [live page](https://haideraliakmal.github.io/mtg-calculator) and enter
 ~~Not much at the moment but I'm planning things ahead for practice.~~ Almost everything I had planned with a few things left :bowtie:
 
 - [x] Calculate damage
-- [x] Apply First Strike
-- [x] Apply Double Strike[^3]
+- [ ] Apply First Strike [^3]
+- [ ] Apply Double Strike [^3]
 - [x] Apply Deathtouch
 - [x] Apply Lifelink
-- [x] Apply Indestructible[^3]
+- [x] Apply Indestructible
+- [x] Apply Cannot Block
+- [ ] Apply Trample [^4]
+- [ ] Apply Flying [^4]
+- [ ] Apply Reach [^4]
+- [ ] Calculate if Planeswalker [^4]
 - [ ] Explain calculation[^1]
 - [ ] Calculate any counters[^2]
 
 [^1]: Been trying to implement this but it may just be too much for me right now
-[^2]: It kind of is doing it already with negative values but not sure if this is the best way, a separate counter at the bottom might work better.
-[^3]: Feels buggy
+[^2]: Might be scrapped in the end
+[^3]: Still working on this
+[^4]: Added new features
+
