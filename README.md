@@ -2,7 +2,7 @@
 
 To help myself and my MtG group learn the game I made this damage calculator. I also wanted something to practice some coding on as I hadn't done any in a long time and was starting to feel rusty. Will most likely update this with more things as I understand the game better and improve some skills.
 
-[Test it for yourself](https://haakmal.github.io/mtg-calculator) and if you use it in your games give me a [shout](https://twitter.com/haideraliakmal)!
+[Test it for yourself](https://haakmal.github.io/mtg-calculator) and if you use it in your games give me a [shout](https://bsky.app/profile/hakmal.bsky.social)!
 
 # How to use
 
