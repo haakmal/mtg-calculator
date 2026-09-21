@@ -1,0 +1,3 @@
+import {has} from './state.js';
+export function canBlock(attacker,blocker){return !(has(attacker,'Flying')&&!has(blocker,'Flying')&&!has(blocker,'Reach'))}
+export function validateCombat({attackers,blockers}){const errors=[];attackers.forEach(attacker=>{const assigned=blockers.filter(blocker=>blocker.blockedAttacker==attacker.id);if(has(attacker,'Menace')&&assigned.length===1)errors.push(`${attacker.name} has menace and requires at least two blockers.`);assigned.filter(blocker=>!canBlock(attacker,blocker)).forEach(blocker=>errors.push(`${blocker.name} cannot legally block ${attacker.name}.`));});return{valid:errors.length===0,errors}}

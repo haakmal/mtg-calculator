@@ -1,0 +1,2 @@
+import {has} from './state.js';
+export function getDamageSteps(attackers,blockers){const all=[...attackers,...blockers];if(!all.some(c=>has(c,'First strike')||has(c,'Double strike')))return[{name:'Combat damage',participates:()=>true}];return[{name:'First-strike damage',participates:c=>has(c,'First strike')||has(c,'Double strike')},{name:'Regular combat damage',participates:c=>!has(c,'First strike')||has(c,'Double strike')}];}
